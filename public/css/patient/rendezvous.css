@@ -1,0 +1,154 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: 'Segoe UI', system-ui, sans-serif; background-color: #f3f4f6; color: #1f2937; }
+a { text-decoration: none; color: inherit; }
+.page-wrapper { display: flex; min-height: 100vh; }
+
+.sidebar { width: 260px; background: #fff; border-right: 1px solid #e5e7eb; display: flex; flex-direction: column; padding: 24px; position: fixed; height: 100vh; left: 0; top: 0; z-index: 10; }
+.sidebar-brand { display: flex; align-items: center; gap: 12px; font-size: 1.25rem; font-weight: 700; color: #2563eb; margin-bottom: 40px; }
+.user-box { display: flex; align-items: center; gap: 12px; background: #f9fafb; padding: 12px; border-radius: 12px; margin-bottom: 30px; }
+.user-avatar { width: 40px; height: 40px; background: #2563eb; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600; }
+.user-details strong { display: block; font-size: 0.95rem; }
+.user-details span { display: block; font-size: 0.8rem; color: #6b7280; }
+.nav-links a { display: flex; align-items: center; gap: 12px; padding: 12px 16px; color: #4b5563; border-radius: 8px; margin-bottom: 4px; transition: 0.2s; font-weight: 500; }
+.nav-links a:hover, .nav-links a.active { background: #eff6ff; color: #2563eb; }
+.sidebar-footer { margin-top: auto; }
+.btn-logout { width: 100%; background: none; border: none; display: flex; align-items: center; gap: 12px; padding: 12px 16px; color: #dc2626; cursor: pointer; font-size: 1rem; font-weight: 500; }
+.btn-logout:hover { background: #fef2f2; border-radius: 8px; }
+
+.main-content { margin-left: 260px; flex: 1; padding: 32px 40px; }
+.page-header { margin-bottom: 30px; }
+.page-header h1 { font-size: 1.8rem; margin: 0; font-weight: 700; }
+.page-header p { color: #6b7280; margin: 5px 0 0 0; }
+
+.alert-success { background: #dcfce7; color: #166534; padding: 12px 16px; border-radius: 8px; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+.alert-error { background: #fee2e2; color: #991b1b; padding: 12px 16px; border-radius: 8px; margin-bottom: 20px; }
+.alert-error ul { list-style: none; padding: 0; margin: 0; }
+
+.split-layout {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.left-panel { flex: 2; }
+.right-panel { flex: 1; position: sticky; top: 30px; }
+
+.section-title { font-size: 1.2rem; margin-bottom: 15px; color: #374151; }
+.history-title { margin-top: 40px; color: #6b7280; border-top: 1px solid #e5e7eb; padding-top: 20px; }
+
+.rdv-list { display: flex; flex-direction: column; gap: 15px; }
+
+.rdv-card {
+    background: white;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    border: 1px solid #e5e7eb;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    transition: 0.2s;
+}
+.rdv-card.annule { opacity: 0.6; background: #f9fafb; }
+
+.rdv-date-box {
+    display: flex; flex-direction: column; align-items: center;
+    background: #eff6ff; color: #2563eb;
+    padding: 8px 12px; border-radius: 8px;
+    min-width: 60px;
+}
+.rdv-date-box .d { font-size: 1.3rem; font-weight: 700; line-height: 1; }
+.rdv-date-box .m { font-size: 0.8rem; text-transform: uppercase; font-weight: 600; }
+.rdv-date-box .time { margin-top: 4px; font-size: 0.8rem; font-weight: 500; background: white; padding: 2px 6px; border-radius: 4px; }
+
+.rdv-info { flex: 1; }
+.rdv-info h4 { margin: 0; font-size: 1.1rem; color: #1f2937; }
+.rdv-info .doc { display: block; font-size: 0.9rem; color: #6b7280; margin: 4px 0 8px 0; }
+
+.badge { padding: 4px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
+.badge.en_attente { background: #fef3c7; color: #d97706; }
+.badge.confirme { background: #dcfce7; color: #166534; }
+.badge.annule { background: #fee2e2; color: #991b1b; }
+
+.btn-cancel {
+    background: #fee2e2; color: #991b1b;
+    border: none; width: 36px; height: 36px; border-radius: 50%;
+    cursor: pointer; display: flex; align-items: center; justify-content: center;
+    transition: 0.2s;
+}
+.btn-cancel:hover { background: #ef4444; color: white; }
+
+.empty-box { background: white; padding: 30px; text-align: center; border-radius: 12px; border: 1px dashed #d1d5db; color: #9ca3af; }
+
+.rdv-list-compact { display: flex; flex-direction: column; gap: 10px; }
+.rdv-row { display: flex; align-items: center; justify-content: space-between; background: white; padding: 12px 16px; border-radius: 8px; border: 1px solid #e5e7eb; }
+.row-date { font-family: monospace; color: #6b7280; }
+.row-detail { flex: 1; margin: 0 20px; display: flex; flex-direction: column; }
+.row-detail strong { font-size: 0.95rem; }
+.row-detail span { font-size: 0.85rem; color: #6b7280; }
+.status-text { font-size: 0.8rem; font-weight: 600; }
+.status-text.termine { color: #166534; }
+.status-text.annule { color: #991b1b; }
+
+.booking-card { background: white; padding: 24px; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border: 1px solid #e5e7eb; }
+.booking-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+.icon-circle { width: 32px; height: 32px; background: #2563eb; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+.booking-header h3 { margin: 0; font-size: 1.1rem; }
+
+.booking-form { display: flex; flex-direction: column; gap: 16px; }
+.form-group { display: flex; flex-direction: column; gap: 6px; }
+.form-group label { font-size: 0.9rem; font-weight: 500; color: #374151; }
+.form-input { padding: 10px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 0.95rem; font-family: inherit; }
+.form-input:focus { outline: none; border-color: #2563eb; box-shadow: 0 0 0 3px rgba(37,99,235,0.1); }
+.btn-submit { background: #2563eb; color: white; border: none; padding: 12px; border-radius: 8px; font-weight: 600; cursor: pointer; margin-top: 10px; transition: 0.2s; }
+.btn-submit:hover { background: #1d4ed8; }
+/* --- TIME SLOT SELECTOR --- */
+.slot-container {
+    margin-top: 15px;
+}
+
+.slot-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.slot-btn {
+    padding: 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    background: white;
+    cursor: pointer;
+    font-weight: 600;
+    color: #374151;
+    transition: 0.2s;
+    text-align: center;
+}
+
+.slot-btn:hover {
+    border-color: #2563eb;
+    color: #2563eb;
+}
+
+/* Sélectionné (Vert/Bleu) */
+.slot-btn.selected {
+    background-color: #2563eb;
+    color: white;
+    border-color: #2563eb;
+}
+
+/* Déjà pris (Rouge & Désactivé) */
+.slot-btn.taken {
+    background-color: #fee2e2;
+    color: #991b1b;
+    border-color: #fecaca;
+    cursor: not-allowed;
+    opacity: 0.7;
+    text-decoration: line-through;
+}
+
+/* Masquer l'input radio réel */
+.hidden-radio {
+    display: none;
+}

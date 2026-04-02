@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* --- RESET & LAYOUT --- */
+body.auth-body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #f3f4f6; /* Gris clair */
+    color: #1f2937;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- EN-TÊTE (HEADER) --- */
+.main-header {
+    background: white;
+    padding: 15px 30px;
+    border-bottom: 1px solid #e5e7eb;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #1e3a8a; /* Bleu foncé */
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* --- CONTENEUR CENTRAL --- */
+.auth-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centre verticalement */
+    padding: 20px;
+}
+
+/* --- CARTE CENTRALE --- */
+.auth-card {
+    background: white;
+    width: 100%;
+    max-width: 500px; /* Largeur max confortable */
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    border: 1px solid #f3f4f6;
+}
+
+/* --- TYPOGRAPHIE --- */
+.auth-title {
+    margin: 0 0 15px 0;
+    color: #111827;
+    font-weight: 800;
+    font-size: 1.5rem;
+}
+
+/* --- BOUTONS --- */
+.btn-primary, .btn-secondary {
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: 1px solid transparent;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Bouton Renvoyer (Bleu) */
+.btn-primary {
+    background-color: #2563eb;
+    color: white;
+}
+.btn-primary:hover {
+    background-color: #1d4ed8;
+}
+
+/* Bouton Déconnexion (Gris/Blanc) */
+.btn-secondary {
+    background-color: white;
+    color: #4b5563;
+    border-color: #d1d5db;
+}
+.btn-secondary:hover {
+    background-color: #f9fafb;
+    color: #111827;
+    border-color: #9ca3af;
+}
+
+/* --- MOBILE --- */
+@media (max-width: 600px) {
+    .auth-card {
+        padding: 20px;
+        box-shadow: none;
+        background: transparent;
+        border: none;
+    }
+    .main-header {
+        justify-content: center;
+    }
+}

@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* --- GLOBAL RESET --- */
+* { box-sizing: border-box; }
+body { margin: 0; font-family: 'Inter', sans-serif; background-color: #f1f5f9; color: #0f172a; }
+a { text-decoration: none; color: inherit; }
+
+.admin-wrapper { display: flex; min-height: 100vh; }
+
+/* --- SIDEBAR --- */
+.sidebar { width: 260px; background: #1e293b; color: white; display: flex; flex-direction: column; position: fixed; height: 100vh; left: 0; top: 0; z-index: 10; }
+.sidebar-header { padding: 24px; font-size: 1.2rem; font-weight: 700; border-bottom: 1px solid #334155; color: #60a5fa; }
+.doctor-profile { padding: 24px; display: flex; align-items: center; gap: 12px; border-bottom: 1px solid #334155; }
+.avatar-circle { width: 40px; height: 40px; background: #3b82f6; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; }
+.info { display: flex; flex-direction: column; }
+.name { font-weight: 600; font-size: 0.95rem; }
+.role { font-size: 0.8rem; color: #94a3b8; }
+.sidebar-nav { padding: 20px 10px; flex: 1; }
+.sidebar-nav a { display: flex; align-items: center; gap: 12px; padding: 12px 16px; margin-bottom: 4px; color: #cbd5e1; border-radius: 8px; transition: 0.2s; }
+.sidebar-nav a:hover, .sidebar-nav a.active { background: #334155; color: white; }
+.sidebar-footer { padding: 20px; border-top: 1px solid #334155; }
+.btn-logout { background: none; border: none; color: #ef4444; cursor: pointer; font-size: 0.95rem; width: 100%; text-align: left; padding: 0; display: flex; align-items: center; gap: 10px; }
+.btn-logout:hover { color: #fca5a5; }
+
+/* --- MAIN CONTENT --- */
+.main-content { margin-left: 260px; flex: 1; padding: 32px; }
+.top-bar { margin-bottom: 32px; }
+.top-bar h1 { margin: 0; font-size: 1.6rem; color: #0f172a; }
+
+/* --- FORM CONTAINER --- */
+.form-container {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    max-width: 600px;
+}
+
+/* --- ALERTS --- */
+.alert-box {
+    background-color: #fef2f2; color: #991b1b;
+    border: 1px solid #fecaca; padding: 12px; border-radius: 8px;
+    margin-bottom: 20px; display: flex; align-items: center; gap: 10px;
+    font-size: 0.9rem; font-weight: 600;
+}
+
+/* --- INPUTS --- */
+.form-group { margin-bottom: 25px; }
+.form-group label { display: block; margin-bottom: 8px; font-weight: 600; color: #334155; font-size: 0.95rem; }
+
+.form-control {
+    width: 100%; padding: 12px;
+    border: 1px solid #cbd5e1; border-radius: 8px;
+    font-size: 0.95rem; font-family: inherit; color: #1e293b;
+    transition: all 0.2s;
+}
+.form-control:focus { outline: none; border-color: #3b82f6; box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1); }
+
+/* --- SLOT GRID (La partie importante) --- */
+.slot-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 10px;
+    margin-top: 10px;
+    padding: 15px;
+    background: #f8fafc;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    min-height: 80px;
+    align-items: center;
+}
+
+.empty-msg {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: #64748b;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* Style des boutons créneaux */
+.slot-btn {
+    background: white;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #334155;
+    transition: 0.2s;
+    user-select: none;
+}
+
+.slot-btn:hover:not(.taken) {
+    border-color: #3b82f6;
+    color: #3b82f6;
+}
+
+/* État sélectionné */
+.slot-btn.selected {
+    background-color: #3b82f6;
+    color: white;
+    border-color: #3b82f6;
+    box-shadow: 0 2px 4px rgba(59, 130, 246, 0.3);
+}
+
+/* État indisponible (Pris) */
+.slot-btn.taken {
+    background-color: #e2e8f0;
+    color: #94a3b8;
+    cursor: not-allowed;
+    text-decoration: line-through;
+    border-color: #e2e8f0;
+    opacity: 0.7;
+}
+
+/* --- BUTTONS --- */
+.form-actions { display: flex; gap: 15px; margin-top: 30px; }
+
+.btn-submit {
+    background: #0f172a; color: white; padding: 12px 24px; border: none; border-radius: 8px;
+    font-weight: 600; cursor: pointer; font-size: 1rem; flex: 2; transition: 0.2s;
+}
+.btn-submit:hover { background: #1e293b; }
+
+.btn-cancel {
+    background: white; border: 1px solid #cbd5e1; color: #475569; padding: 12px 24px;
+    border-radius: 8px; text-decoration: none; font-weight: 600; text-align: center; flex: 1; transition: 0.2s;
+    display: flex; align-items: center; justify-content: center;
+}
+.btn-cancel:hover { background: #f1f5f9; color: #0f172a; }
+
+.error-msg { color: #dc2626; font-size: 0.85rem; margin-top: 5px; display: block; font-weight: 500; }

@@ -1,0 +1,321 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* --- 1. GLOBAL RESET & LAYOUT --- */
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #f1f5f9; /* Light gray background */
+    color: #0f172a; /* Dark text */
+}
+
+a { text-decoration: none; color: inherit; }
+
+.admin-wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* --- 2. SIDEBAR (Navigation) --- */
+.sidebar {
+    width: 260px;
+    background: #1e293b; /* Dark Blue */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    z-index: 10;
+}
+
+.sidebar-header {
+    padding: 24px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid #334155;
+    color: #60a5fa; /* Accent blue */
+}
+
+.doctor-profile {
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 1px solid #334155;
+}
+
+.avatar-circle {
+    width: 40px; height: 40px;
+    background: #3b82f6;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}
+
+.info { display: flex; flex-direction: column; }
+.name { font-weight: 600; font-size: 0.95rem; }
+.role { font-size: 0.8rem; color: #94a3b8; }
+
+.sidebar-nav { padding: 20px 10px; flex: 1; }
+
+.sidebar-nav a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    margin-bottom: 4px;
+    color: #cbd5e1;
+    border-radius: 8px;
+    transition: 0.2s;
+}
+
+.sidebar-nav a:hover, .sidebar-nav a.active {
+    background: #334155;
+    color: white;
+}
+
+.sidebar-footer { padding: 20px; border-top: 1px solid #334155; }
+
+.btn-logout {
+    background: none; border: none;
+    color: #ef4444; /* Red */
+    display: flex; align-items: center; gap: 10px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    width: 100%;
+    text-align: left;
+    padding: 0;
+}
+.btn-logout:hover { color: #fca5a5; }
+
+/* --- 3. MAIN CONTENT --- */
+.main-content {
+    margin-left: 260px;
+    flex: 1;
+    padding: 32px;
+}
+
+.top-bar {
+    margin-bottom: 32px;
+}
+
+.top-bar h1 {
+    margin: 0;
+    font-size: 1.6rem;
+    color: #0f172a;
+    font-weight: 700;
+}
+
+/* --- 4. SECTION CONTAINER --- */
+.section-container {
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.section-header h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #334155;
+}
+
+/* --- 5. CONSULTATIONS TABLE --- */
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.admin-table th {
+    text-align: left;
+    color: #64748b;
+    font-size: 0.85rem;
+    padding: 15px;
+    border-bottom: 2px solid #e2e8f0;
+    background-color: #f8fafc;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+}
+
+.admin-table td {
+    padding: 16px 15px;
+    border-bottom: 1px solid #f1f5f9;
+    color: #334155;
+    vertical-align: middle;
+    font-size: 0.95rem;
+}
+
+.admin-table tr:hover {
+    background-color: #f8fafc;
+}
+
+.admin-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* Patient Info Cell */
+.patient-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.patient-info strong {
+    font-weight: 600;
+    color: #0f172a;
+    font-size: 0.95rem;
+}
+
+.patient-info small {
+    color: #64748b;
+    font-size: 0.85rem;
+    margin-top: 2px;
+}
+
+.text-muted {
+    color: #94a3b8;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+/* Empty State */
+.empty-row {
+    text-align: center;
+    color: #94a3b8;
+    padding: 40px;
+    font-style: italic;
+}
+
+/* --- 6. BUTTONS & ACTIONS --- */
+.btn-action {
+    background: white;
+    border: 1px solid #cbd5e1;
+    color: #475569;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    transition: all 0.2s;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.btn-action:hover {
+    background-color: #f1f5f9;
+    color: #2563eb;
+    border-color: #2563eb;
+}
+
+/* --- PAGINATION (NOUVEAU DESIGN ÉPURÉ) --- */
+
+/* 1. Conteneur principal */
+.pagination-links {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end; /* Alignement à droite (plus pro pour les tableaux) */
+    width: 100%;
+}
+
+/* 2. La barre de navigation */
+.pagination-links nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+/* 3. Texte "Showing results..." (On le stylise proprement) */
+.pagination-links nav > div:first-child p {
+    font-size: 0.85rem;
+    color: #64748b;
+    margin: 0;
+}
+.pagination-links nav > div:first-child p span {
+    font-weight: 700;
+    color: #0f172a;
+}
+
+/* Sur mobile, on cache le texte pour gagner de la place */
+@media (max-width: 640px) {
+    .pagination-links nav > div:first-child { display: none; }
+    .pagination-links { justify-content: center; }
+}
+
+/* 4. Conteneur des boutons */
+.pagination-links nav > div:last-child {
+    display: flex;
+    gap: 4px; /* Petit espace entre les carrés */
+}
+.pagination-links nav > div:last-child > div {
+    display: flex;
+    gap: 4px;
+}
+
+/* 5. STYLE DES BOUTONS (Carrés avec bords légèrement arrondis) */
+.pagination-links a, 
+.pagination-links span[aria-current="page"], 
+.pagination-links span[aria-disabled="true"] 
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 32px;
+    height: 32px;
+    padding: 0 6px;
+    border-radius: 4px; /* Juste un peu arrondi */
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.2s;
+    border: 1px solid #e2e8f0; /* Bordure grise fine */
+    background-color: white;
+    color: #475569;
+}
+
+/* --- ÉTATS --- */
+
+/* Hover (Survol) */
+.pagination-links a:hover {
+    background-color: #f1f5f9;
+    color: #0f172a;
+    border-color: #cbd5e1;
+}
+
+/* Page ACTIVE (Bleu foncé comme la sidebar) */
+.pagination-links span[aria-current="page"] {
+    background-color: #0f172a; /* Bleu nuit */
+    color: white;
+    border-color: #0f172a;
+}
+
+/* Boutons désactivés (Précédent/Suivant grisés) */
+.pagination-links span[aria-disabled="true"] {
+    background-color: #f8fafc;
+    color: #cbd5e1;
+    cursor: not-allowed;
+    border-color: #f1f5f9;
+}
+
+/* 6. CORRECTION DES ICÔNES (Flèches) */
+.pagination-links svg {
+    width: 16px !important;
+    height: 16px !important;
+}

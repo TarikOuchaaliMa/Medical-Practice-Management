@@ -1,0 +1,138 @@
+/* --- FONTS & GLOBAL --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+* { box-sizing: border-box; }
+
+body { margin: 0; font-family: 'Inter', sans-serif; }
+a { text-decoration: none; color: inherit; }
+
+/* --- AUTH PAGE LAYOUT --- */
+.auth-body {
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); /* Light Blue Background */
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif;
+}
+
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+.auth-card {
+    background: white;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    max-width: 600px; /* Wider for the registration form */
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+.back-link {
+    position: absolute;
+    top: 40px;
+    left: 40px; /* Aligné à gauche */
+    display: flex; align-items: center; gap: 8px;
+    color: #4b5563;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+.back-link:hover { color: #2563eb; }
+.auth-title {
+    text-align: center;
+    color: #1e293b;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+/* --- FORM ELEMENTS --- */
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    flex: 1;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #334155;
+    font-size: 0.9rem;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #1e293b;
+    background-color: #f8fafc;
+    transition: 0.2s;
+    font-family: inherit;
+}
+
+.form-control:focus {
+    outline: none;
+    background-color: white;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* --- MAP --- */
+#map {
+    height: 250px;
+    width: 100%;
+    border-radius: 8px;
+    margin-top: 10px;
+    border: 1px solid #e2e8f0;
+    z-index: 1;
+}
+
+/* --- BUTTONS --- */
+.btn-block {
+    display: block;
+    width: 100%;
+}
+
+.btn-primary {
+    background-color: #0f172a;
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 10px;
+}
+
+.btn-primary:hover {
+    background-color: #374151;
+}
+
+/* --- ALERTS & ERRORS --- */
+.error-msg {
+    color: #dc2626;
+    font-size: 0.85rem;
+    margin-top: 5px;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 600px) {
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+    .auth-card {
+        padding: 25px;
+    }
+}

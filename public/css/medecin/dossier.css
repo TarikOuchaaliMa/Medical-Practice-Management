@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+* { box-sizing: border-box; }
+body { margin: 0; font-family: 'Inter', sans-serif; background-color: #f1f5f9; color: #0f172a; }
+a { text-decoration: none; color: inherit; }
+.admin-wrapper { display: flex; min-height: 100vh; }
+
+/* SIDEBAR (Standard) */
+.sidebar { width: 260px; background: #1e293b; color: white; display: flex; flex-direction: column; position: fixed; height: 100vh; left: 0; top: 0; }
+.sidebar-header { padding: 24px; font-size: 1.2rem; font-weight: 700; border-bottom: 1px solid #334155; color: #60a5fa; }
+.doctor-profile { padding: 24px; display: flex; align-items: center; gap: 12px; border-bottom: 1px solid #334155; }
+.avatar-circle { width: 40px; height: 40px; background: #3b82f6; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; }
+.info { display: flex; flex-direction: column; }
+.name { font-weight: 600; font-size: 0.95rem; }
+.role { font-size: 0.8rem; color: #94a3b8; }
+.sidebar-nav { padding: 20px 10px; flex: 1; }
+.sidebar-nav a { display: flex; align-items: center; gap: 12px; padding: 12px 16px; margin-bottom: 4px; color: #cbd5e1; border-radius: 8px; transition: 0.2s; }
+.sidebar-nav a:hover, .sidebar-nav a.active { background: #334155; color: white; }
+.sidebar-footer { padding: 20px; border-top: 1px solid #334155; }
+.btn-logout { background: none; border: none; color: #ef4444; cursor: pointer; font-size: 0.95rem; width: 100%; text-align: left; padding: 0; }
+
+/* MAIN CONTENT */
+.main-content { margin-left: 260px; flex: 1; padding: 32px; }
+.top-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; }
+.top-bar h1 { margin: 0; font-size: 1.6rem; color: #0f172a; }
+.btn-back { font-size: 0.9rem; color: #64748b; font-weight: 600; }
+.btn-back:hover { color: #2563eb; }
+
+/* LAYOUT GRID */
+.dossier-grid { display: grid; grid-template-columns: 350px 1fr; gap: 30px; }
+
+/* CARDS */
+.card { background: white; border-radius: 12px; padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); margin-bottom: 20px; }
+
+/* LEFT COL - PATIENT INFO */
+.patient-card { text-align: center; }
+.avatar-large { width: 80px; height: 80px; background: #eff6ff; color: #3b82f6; font-size: 2rem; font-weight: 700; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px auto; }
+.patient-card h2 { margin: 0; font-size: 1.4rem; color: #1e3a8a; }
+.patient-card .text-muted { color: #94a3b8; margin: 5px 0 20px 0; font-size: 0.9rem; }
+
+.info-list { text-align: left; border-top: 1px solid #f1f5f9; padding-top: 20px; display: flex; flex-direction: column; gap: 15px; }
+.info-item { display: flex; align-items: center; gap: 12px; color: #334155; font-size: 0.95rem; }
+.info-item i { width: 20px; text-align: center; color: #94a3b8; }
+
+.alert-card h3 { margin: 0 0 10px 0; font-size: 1rem; color: #991b1b; display: flex; align-items: center; gap: 8px; }
+.alert-text { background: #fef2f2; color: #991b1b; padding: 10px; border-radius: 8px; font-weight: 600; font-size: 0.9rem; margin: 0; }
+.safe-text { color: #166534; font-size: 0.9rem; margin: 0; }
+
+/* RIGHT COL - HISTORY */
+.action-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+.action-header h3 { margin: 0; }
+.btn-new-consultation { background: #0f172a; color: white; padding: 8px 16px; border-radius: 6px; font-weight: 600; font-size: 0.9rem; }
+.btn-new-consultation:hover { background: #1e293b; }
+
+/* TIMELINE */
+.timeline { display: flex; flex-direction: column; gap: 20px; }
+
+.timeline-item { display: flex; gap: 20px; background: white; padding: 20px; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); border: 1px solid #e2e8f0; }
+
+.timeline-date { display: flex; flex-direction: column; align-items: center; justify-content: center; background: #f1f5f9; padding: 10px; border-radius: 8px; min-width: 70px; height: fit-content; }
+.timeline-date .day { font-size: 1.4rem; font-weight: 700; color: #0f172a; line-height: 1; }
+.timeline-date .month { font-size: 0.8rem; text-transform: uppercase; font-weight: 600; color: #64748b; }
+.timeline-date .year { font-size: 0.75rem; color: #94a3b8; }
+
+.timeline-content { flex: 1; }
+.t-title { margin: 0 0 10px 0; color: #2563eb; font-size: 1.1rem; }
+.t-section { margin-bottom: 8px; font-size: 0.95rem; color: #334155; }
+.t-section strong { font-weight: 600; color: #0f172a; }
+.t-private { margin-top: 10px; background: #fff1f2; color: #be123c; padding: 8px; border-radius: 6px; font-size: 0.85rem; border: 1px dashed #fda4af; }
+
+.empty-box { text-align: center; padding: 40px; background: white; border-radius: 12px; color: #94a3b8; }

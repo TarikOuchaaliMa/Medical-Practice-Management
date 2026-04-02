@@ -1,0 +1,190 @@
+/* --- FONTS & GLOBAL --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #f0f9ff; /* Fond bleu très clair comme sur l'image */
+    color: #1f2937;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+a { text-decoration: none; color: inherit; }
+
+/* --- LIEN RETOUR --- */
+.back-link {
+    position: absolute;
+    top: 40px;
+    left: 40px; /* Aligné à gauche */
+    display: flex; align-items: center; gap: 8px;
+    color: #4b5563;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+.back-link:hover { color: #2563eb; }
+
+/* --- WRAPPER & HEADER --- */
+.auth-wrapper {
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+}
+
+.auth-header { margin-bottom: 40px; }
+
+.logo-circle {
+    width: 60px; height: 60px;
+    background-color: #2563eb; /* Bleu vif */
+    color: white;
+    font-size: 1.8rem;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 15px auto;
+}
+
+.auth-header h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1e3a8a; /* Bleu foncé */
+    margin: 0 0 5px 0;
+}
+
+.auth-header p {
+    color: #64748b;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* --- CARTE BLANCHE --- */
+.auth-card {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+    text-align: left;
+}
+
+.card-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 0 0 5px 0;
+    color: #111827;
+}
+
+.card-subtitle {
+    color: #6b7280;
+    font-size: 0.9rem;
+    margin: 0 0 25px 0;
+}
+
+/* --- ONGLETS (TABS) --- */
+.tab-container {
+    background-color: #f1f5f9; /* Gris très clair */
+    padding: 5px;
+    border-radius: 50px; /* Forme Pilule */
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    background: transparent;
+    border-radius: 40px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #64748b;
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    transition: all 0.2s;
+}
+
+.tab-btn.active {
+    background-color: white;
+    color: #111827; /* Texte noir */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.tab-btn:hover:not(.active) { color: #374151; }
+
+/* --- FORMULAIRE --- */
+.form-section { display: none; }
+.form-section.active { display: block; }
+
+.form-group { margin-bottom: 20px; }
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #374151;
+}
+
+.form-input {
+    width: 100%;
+    padding: 12px 16px;
+    background-color: #f8fafc; /* Gris très pâle comme sur l'image */
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    color: #1f2937;
+    transition: 0.2s;
+}
+
+.form-input:focus {
+    outline: none;
+    background-color: white;
+    border-color: #e2e8f0;
+}
+
+/* --- BOUTON NOIR --- */
+.btn-submit {
+    width: 100%;
+    padding: 14px;
+    background-color: #0f172a; /* Noir/Bleu nuit très foncé */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 10px;
+}
+
+.btn-submit:hover {
+    background-color: #1e293b;
+}
+
+/* --- BOITE DEMO --- */
+.demo-box {
+    margin-top: 25px;
+    background-color: #eff6ff; /* Bleu très pâle */
+    border-radius: 8px;
+    padding: 15px;
+    font-size: 0.85rem;
+    color: #1e40af;
+}
+
+.demo-box strong { display: block; margin-bottom: 4px; }
+.demo-box p { margin: 0; opacity: 0.9; }
+.demo-box a { color: #2563eb; font-weight: 600; text-decoration: underline; }
+
+.error-text {
+    color: #dc2626; font-size: 0.85rem; margin-top: 5px; display: block;
+}
+
+/* --- REGISTER PAGE COMPATIBILITY --- */
+/* (Ces styles sont conservés pour que la page Register ne casse pas) */
+#map { height: 250px; border-radius: 8px; margin-top: 10px; }
+.form-row { display: flex; gap: 15px; }
+.form-row .form-group { flex: 1; }
+@media (max-width: 600px) { .form-row { flex-direction: column; gap: 0; } }
